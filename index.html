@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VueJS Experiment</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div id="header">
+        <h1>{{name}}</h1>
+        <ul>
+            <li v-for="link in links"><a href="#">{{link}}</a></li>
+        </ul>
+    </div>
+    <div id="wrapper">
+        <div class="product-card" v-for="(product, index) in products">
+            <img :src="product.images[0]" alt="" style="display:block;width:100%">
+            <a href="javascript:void(0)" class="product-title" @click="setSelectedProduct(product.id)">{{index}} {{product.id}} {{product.title}}</a>
+        </div>
+        <div style="clear:both"></div>
+        <div class="selected" v-if="selected_product">
+            <img :src="selected_product.images[0]" alt="" style="width:300px;float:left;">
+            <h2>{{selected_product.title}}</h2>
+            <p>{{selected_product.description}}</p>
+        </div>
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>
