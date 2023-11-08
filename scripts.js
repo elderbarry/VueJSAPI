@@ -27,7 +27,7 @@ Vue.createApp({
         }
     },
     mounted() {
-        fetch('https://api.escuelajs.co/api/v1/products?offset=0&limit=10')
+        fetch('https://api.escuelajs.co/api/v1/products?offset=0&limit=4')
             .then(res=>res.json())
             .then(json=>this.products=json);
     }
